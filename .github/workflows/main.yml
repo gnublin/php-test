@@ -1,8 +1,9 @@
 name: Deploy master
 on:
+  workflow_dispatch:
   push:
     branches:
-    - master
+    - staging
 
 jobs:
   build:
