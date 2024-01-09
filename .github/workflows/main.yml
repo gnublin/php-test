@@ -9,6 +9,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Set current date as env variable
+      run: echo "::set-output name=date::$(date +'%Y-%m-%d_%H%M')"
+      id: release_date
 
     - name: Checkout source code
       uses: actions/checkout@v2
@@ -23,7 +26,6 @@ jobs:
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         application_name: php-test-01
         environment_name: Php-test-01-env
-        version_label: staging
+        version_label: staging-${{ steps.release_date.outputs.date }}
         region: eu-west-3
         deployment_package: deploy.zip
-        use_existing_version_if_available: true
