@@ -1,4 +1,4 @@
-name: Deploy master
+name: Deploy staging
 on:
   workflow_dispatch:
   push:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Set current date as env variable
-      run: echo "::set-output name=date::$(date +'%Y-%m-%d_%H%M')"
+      run: echo "{date}={$(date +'%Y-%m-%d_%H%M')}" >> $GITHUB_OUTPUT
       id: release_date
 
     - name: Checkout source code
