@@ -26,6 +26,6 @@ jobs:
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         application_name: php-test-01
         environment_name: Php-test-01-env
-        version_label: staging-${{ steps.release_date.outputs.date }}
+        version_label: staging-${{ steps.release_date.outputs.builddate }}
         region: eu-west-3
         deployment_package: deploy.zip
