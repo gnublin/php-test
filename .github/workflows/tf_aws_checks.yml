@@ -49,7 +49,7 @@ jobs:
         run: |
           terraform plan | tee /tmp/plan.out
           echo "PLAN<<EOF" >> $GITHUB_ENV
-          echo "$(cut -c -140 /tmp/plan.out | tail --lines=300 | grep --text --invert-match '^::')" >> $GITHUB_ENV
+          echo "plan_output=$(cut -c -140 /tmp/plan.out | tail --lines=300 | grep --text --invert-match '^::')" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
       - uses: actions/github-script@v6
@@ -64,7 +64,7 @@ jobs:
               <details><summary>Show Plan</summary>
 
               \`\`\`\n
-              ${process.env.PLAN}
+              ${steps.plan.outputs.plan_output}
               \`\`\`
 
               </details>
