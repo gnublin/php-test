@@ -5,7 +5,7 @@ resource "aws_apprunner_service" "datadog_agent_service" {
 
   source_configuration {
     image_repository {
-      image_identifier     = "245918101727.dkr.ecr.eu-west-3.amazonaws.com/dd-test:latest"
+      image_identifier      = "245918101727.dkr.ecr.eu-west-3.amazonaws.com/dd-test:latest"
       image_repository_type = "ECR"
     }
   }
