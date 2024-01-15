@@ -49,9 +49,7 @@ jobs:
         run: |
           terraform plan > /tmp/plan.out
           cat /tmp/plan.out
-          echo "PLAN<<EOF" >> $GITHUB_OUTPUT
           echo "plan_output=$(cut -c -140 /tmp/plan.out | tail --lines=300 | grep --text --invert-match '^::')" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: UpdateCommit
         uses: actions/github-script@v6
