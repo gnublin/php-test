@@ -11,6 +11,8 @@ resource "aws_apprunner_service" "datadog_agent_service" {
   }
 }
 
+
+
 # Output the ARN of the Datadog Agent Service
 output "datadog_service_arn" {
   value = aws_apprunner_service.datadog_agent_service.arn
