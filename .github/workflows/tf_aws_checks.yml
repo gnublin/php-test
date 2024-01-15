@@ -48,8 +48,8 @@ jobs:
         id: plan
         run: |
           terraform plan > /tmp/plan.out
-          cat /tmp/plan.out
           echo "plan_output=$(cat /tmp/plan.out)" >> $GITHUB_OUTPUT
+          cat /tmp/plan.out
 
       - name: UpdateCommit
         uses: actions/github-script@v6
