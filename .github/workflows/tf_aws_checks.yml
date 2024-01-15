@@ -65,7 +65,7 @@ jobs:
               <details><summary>Show Plan</summary>
 
               \`\`\`\n
-              steps.plan
+              ${steps.plan}
               ${steps.plan.outputs.plan_output}
               \`\`\`
 
