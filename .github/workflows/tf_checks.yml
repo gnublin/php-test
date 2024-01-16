@@ -7,12 +7,6 @@ on:
         description: 'Terraform working directory'
         required: true
         type: string
-  workflow_dispatch:
-    inputs:
-      working_dir:
-        description: 'Terraform working directory'
-        required: true
-        type: string
 
 jobs:
   TerraformChecks:
@@ -20,7 +14,7 @@ jobs:
     timeout-minutes: 2
     defaults:
       run:
-        working-directory: ${{ github.event.inputs.working_dir }}
+        working-directory: ${{ inputs.working_dir }}
 
     steps:
       - name: Checkout code
