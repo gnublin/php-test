@@ -3,10 +3,10 @@ name: Run TF checks
 on:
   workflow_call:
     inputs:
-    working_dir:
-      description: 'Terraform working directory'
-      required: true
-      type: string
+      working_dir:
+        description: 'Terraform working directory'
+        required: true
+        type: string
   workflow_dispatch:
     inputs:
       working_dir:
