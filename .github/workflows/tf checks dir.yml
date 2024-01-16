@@ -1,0 +1,13 @@
+name: Run TF checks on directory
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  00_root_account:
+    uses: gnublin/php-test/.github/workflows/tf_checks.yml@main
+    with:
+      environment: "terraform"
