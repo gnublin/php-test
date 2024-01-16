@@ -7,7 +7,7 @@ on:
   pull_request:
 
 jobs:
-  00_root_account:
+  root_account:
     uses: gnublin/php-test/.github/workflows/tf_checks.yml@main
     with:
       environment: "terraform"
